@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 import 'package:movil/widgets/login_forgot_card.dart';
 
 import '../forms/form_login.dart';
@@ -10,8 +11,8 @@ class LoginForgot extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFF3838),
-      appBar: AppBar(backgroundColor: const Color(0xFFB31515), elevation: 0),
+      backgroundColor: AppColors.mainRed,
+      appBar: AppBar(backgroundColor: AppColors.secondaryRed, elevation: 0),
       body: SingleChildScrollView(
           reverse: true,
           child: Column(
@@ -24,7 +25,8 @@ class LoginForgot extends StatelessWidget {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.3,
-                    decoration: const BoxDecoration(color: Color(0xFFB31515)),
+                    decoration:
+                        const BoxDecoration(color: AppColors.secondaryRed),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -37,7 +39,7 @@ class LoginForgot extends StatelessWidget {
                               textAlign: TextAlign.center,
                               maxLines: 4,
                               style: GoogleFonts.mukta(
-                                color: Colors.white,
+                                color: AppColors.white,
                                 fontSize: 40,
                                 height: 1,
                                 fontWeight: FontWeight.w600,

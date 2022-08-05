@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movil/models/intakesnamed_model.dart';
+import '../utilities/app_colors.dart';
 import 'package:movil/widgets/card_shimmer.dart';
 import 'package:movil/widgets/drawer.dart';
 import 'package:movil/widgets/home_header.dart';
@@ -30,8 +31,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       drawer: const DrawerMain(1),
       appBar: AppBar(
-        title: Text('Inicio', style: GoogleFonts.mukta(color: Colors.white)),
-        backgroundColor: const Color(0xFFFF3838),
+        title: Text('Inicio', style: GoogleFonts.mukta(color: AppColors.white)),
+        backgroundColor: AppColors.mainRed,
         elevation: 0,
       ),
       body: Column(
@@ -83,15 +84,14 @@ class _Shimmer extends StatelessWidget {
       const HomeHeader(),
       SizedBox(
           child: Shimmer.fromColors(
-              baseColor: Colors.white,
-              highlightColor: const Color.fromARGB(255, 199, 199, 199),
+              baseColor: AppColors.white,
+              highlightColor: AppColors.loading,
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
                   'Próximas Ingestas',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.mukta(
-                    color: Colors.black,
                     height: 1,
                     fontSize: 25,
                   ),
@@ -101,15 +101,14 @@ class _Shimmer extends StatelessWidget {
       const CardShimmer(),
       SizedBox(
           child: Shimmer.fromColors(
-              baseColor: Colors.white,
-              highlightColor: const Color.fromARGB(255, 199, 199, 199),
+              baseColor: AppColors.white,
+              highlightColor: AppColors.loading,
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
                   'Últimas Ingestas',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.mukta(
-                    color: Colors.black,
                     height: 1,
                     fontSize: 25,
                   ),
@@ -145,7 +144,7 @@ class _HomeBuilder extends StatelessWidget {
                   'Próximas Ingestas',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.mukta(
-                    color: Colors.black,
+                    color: AppColors.black,
                     height: 1,
                     fontSize: 25,
                   ),
@@ -160,7 +159,7 @@ class _HomeBuilder extends StatelessWidget {
                   'Últimas ingestas',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.mukta(
-                    color: Colors.black,
+                    color: AppColors.black,
                     height: 1,
                     fontSize: 25,
                   ),

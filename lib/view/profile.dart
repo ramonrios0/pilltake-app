@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movil/models/user.dart';
+import 'package:movil/utilities/app_colors.dart';
 import 'package:movil/widgets/drawer.dart';
 import 'package:movil/widgets/medic_card.dart';
 import 'package:movil/widgets/profile_card.dart';
@@ -18,8 +19,9 @@ class Profile extends StatelessWidget {
     return Scaffold(
       drawer: const DrawerMain(3),
       appBar: AppBar(
-          title: Text('Perfil', style: GoogleFonts.mukta(color: Colors.white)),
-          backgroundColor: const Color(0xFFFF3838),
+          title:
+              Text('Perfil', style: GoogleFonts.mukta(color: AppColors.white)),
+          backgroundColor: AppColors.mainRed,
           elevation: 0),
       body: FutureBuilder(
         future: _getUserData(),
@@ -104,23 +106,22 @@ class _Shimmer extends StatelessWidget {
     return ListView(children: [
       ProfileHeader(globals.username),
       Shimmer.fromColors(
-          baseColor: Colors.white,
-          highlightColor: const Color.fromARGB(255, 199, 199, 199),
+          baseColor: AppColors.white,
+          highlightColor: AppColors.loading,
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Text(
               'Datos personales',
               textAlign: TextAlign.left,
               style: GoogleFonts.mukta(
-                color: Colors.black,
                 height: 1,
                 fontSize: 25,
               ),
             ),
           )),
       Shimmer.fromColors(
-        baseColor: Colors.white,
-        highlightColor: const Color.fromARGB(255, 199, 199, 199),
+        baseColor: AppColors.white,
+        highlightColor: AppColors.loading,
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -129,23 +130,22 @@ class _Shimmer extends StatelessWidget {
         ),
       ),
       Shimmer.fromColors(
-          baseColor: Colors.white,
-          highlightColor: const Color.fromARGB(255, 199, 199, 199),
+          baseColor: AppColors.white,
+          highlightColor: AppColors.loading,
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Text(
               'Contacto de tu médico',
               textAlign: TextAlign.left,
               style: GoogleFonts.mukta(
-                color: Colors.black,
                 height: 1,
                 fontSize: 25,
               ),
             ),
           )),
       Shimmer.fromColors(
-        baseColor: Colors.white,
-        highlightColor: const Color.fromARGB(255, 199, 199, 199),
+        baseColor: AppColors.white,
+        highlightColor: AppColors.loading,
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

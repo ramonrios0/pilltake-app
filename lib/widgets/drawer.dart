@@ -6,6 +6,7 @@
  *
  */
 
+import 'package:movil/utilities/app_colors.dart';
 import 'package:movil/view/splash.dart';
 
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class DrawerMain extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
-              decoration: const BoxDecoration(color: Color(0xFFB31515)),
+              decoration: const BoxDecoration(color: AppColors.secondaryRed),
               child: Image.asset('assets/images/PillTakeLogo.png')),
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
@@ -39,7 +40,7 @@ class DrawerMain extends StatelessWidget {
             title: Text(
               'Inicio',
               style: GoogleFonts.mukta(
-                color: Colors.black,
+                color: AppColors.black,
                 fontSize: 19,
               ),
             ),
@@ -62,7 +63,7 @@ class DrawerMain extends StatelessWidget {
             title: Text(
               'Pacientes',
               style: GoogleFonts.mukta(
-                color: Colors.black,
+                color: AppColors.black,
                 fontSize: 19,
               ),
             ),
@@ -79,7 +80,7 @@ class DrawerMain extends StatelessWidget {
             title: Text(
               'Perfil y Contacto',
               style: GoogleFonts.mukta(
-                color: Colors.black,
+                color: AppColors.black,
                 fontSize: 19,
               ),
             ),
@@ -124,7 +125,7 @@ class DrawerMain extends StatelessWidget {
             title: Text(
               'Centro de ayuda',
               style: GoogleFonts.mukta(
-                color: Colors.black,
+                color: AppColors.black,
                 fontSize: 19,
               ),
             ),
@@ -141,7 +142,7 @@ class DrawerMain extends StatelessWidget {
             title: Text(
               'Acerca de',
               style: GoogleFonts.mukta(
-                color: Colors.black,
+                color: AppColors.black,
                 fontSize: 19,
               ),
             ),
@@ -172,7 +173,7 @@ class DrawerMain extends StatelessWidget {
               title: Text(
                 'Cerrar Sesión',
                 style: GoogleFonts.mukta(
-                  color: Colors.black,
+                  color: AppColors.black,
                   fontSize: 19,
                 ),
               ),

@@ -10,6 +10,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movil/forms/form_patient.dart';
+import 'package:movil/utilities/app_colors.dart';
 
 class PatientHeader extends StatelessWidget {
   final String nombreUsuario, finalDate, initDate;
@@ -22,7 +23,7 @@ class PatientHeader extends StatelessWidget {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.2,
-          decoration: const BoxDecoration(color: Color(0xFFB31515)),
+          decoration: const BoxDecoration(color: AppColors.secondaryRed),
           child: Column(children: [
             Padding(
               padding: const EdgeInsets.all(20),
@@ -31,7 +32,7 @@ class PatientHeader extends StatelessWidget {
                   nombreUsuario,
                   maxLines: 3,
                   style: GoogleFonts.mukta(
-                    color: Colors.white,
+                    color: AppColors.white,
                     fontSize: 30,
                     height: 1,
                   ),
@@ -45,14 +46,14 @@ class PatientHeader extends StatelessWidget {
                     child: Text(
                       'Inició: $initDate',
                       style: GoogleFonts.mukta(
-                          color: Colors.white, fontSize: 20, height: 1),
+                          color: AppColors.white, fontSize: 20, height: 1),
                     )),
                 Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                     child: Text(
                       'Finaliza: $finalDate',
                       style: GoogleFonts.mukta(
-                          color: Colors.white, fontSize: 20, height: 1),
+                          color: AppColors.white, fontSize: 20, height: 1),
                     )),
               ],
             )

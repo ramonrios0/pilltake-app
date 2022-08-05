@@ -9,6 +9,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movil/models/intakes_model.dart';
+import 'package:movil/utilities/app_colors.dart';
 import 'package:movil/widgets/bar_chart.dart';
 import 'package:movil/widgets/intake_card_unamed.dart';
 import 'package:movil/widgets/patient_header.dart';
@@ -38,8 +39,8 @@ class _PatientDetailsState extends State<PatientDetails> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Detalles del paciente',
-            style: GoogleFonts.mukta(color: Colors.white, fontSize: 20)),
-        backgroundColor: const Color(0xFFFF3838),
+            style: GoogleFonts.mukta(color: AppColors.white, fontSize: 20)),
+        backgroundColor: AppColors.mainRed,
         elevation: 0,
       ),
       body: FutureBuilder(
@@ -87,9 +88,9 @@ class _DetailsBuilder extends StatelessWidget {
             child: Text(
               'Estadísticas',
               style: GoogleFonts.mukta(
-                  color: Colors.black, fontSize: 25, height: 1),
+                  color: AppColors.black, fontSize: 25, height: 1),
             )),
-        //--- Gráfica de estadísticas ---
+// Gráfica de estadísticas
         FadeInLeft(
             duration: const Duration(milliseconds: 250),
             child: DetailsChart(intakeData[0], intakeData[1], intakeData[2])),
@@ -113,8 +114,8 @@ class _DetailsBuilder extends StatelessWidget {
                 child: SizedBox(
                     width: MediaQuery.of(context).size.width * .45,
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: const Color(0xFFFF3838)),
+                      style:
+                          ElevatedButton.styleFrom(primary: AppColors.mainRed),
                       child: const Text('Ver últimas faltas'),
                       onPressed: () {
                         Navigator.of(context).pushNamed(
@@ -129,7 +130,7 @@ class _DetailsBuilder extends StatelessWidget {
             child: Text(
               'Próximas ingestas',
               style: GoogleFonts.mukta(
-                  color: Colors.black, fontSize: 25, height: 1),
+                  color: AppColors.black, fontSize: 25, height: 1),
             )),
         // --- Tarjetas de ingestas ---
         ListView.builder(
@@ -153,8 +154,7 @@ class _DetailsBuilder extends StatelessWidget {
                         '/patients/details/all-intakes',
                         arguments: {'patientID': patientID});
                   },
-                  style: ElevatedButton.styleFrom(
-                      primary: const Color(0xFF9E9E9E)),
+                  style: ElevatedButton.styleFrom(primary: AppColors.gray),
                   child: const Text('Próximas ingestas'),
                 )))
       ],
@@ -235,23 +235,22 @@ class _Shimmer extends StatelessWidget {
       PatientHeader(patientName, initDate, finalDate),
       SizedBox(
           child: Shimmer.fromColors(
-              baseColor: Colors.white,
-              highlightColor: const Color.fromARGB(255, 199, 199, 199),
+              baseColor: AppColors.white,
+              highlightColor: AppColors.loading,
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
                   'Estadisticas',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.mukta(
-                    color: Colors.black,
                     height: 1,
                     fontSize: 25,
                   ),
                 ),
               ))),
       Shimmer.fromColors(
-        baseColor: Colors.white,
-        highlightColor: const Color.fromARGB(255, 199, 199, 199),
+        baseColor: AppColors.white,
+        highlightColor: AppColors.loading,
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -262,8 +261,8 @@ class _Shimmer extends StatelessWidget {
       Row(
         children: [
           Shimmer.fromColors(
-            baseColor: Colors.white,
-            highlightColor: const Color.fromARGB(255, 199, 199, 199),
+            baseColor: AppColors.white,
+            highlightColor: AppColors.loading,
             child: Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
@@ -272,8 +271,8 @@ class _Shimmer extends StatelessWidget {
             ),
           ),
           Shimmer.fromColors(
-            baseColor: Colors.white,
-            highlightColor: const Color.fromARGB(255, 199, 199, 199),
+            baseColor: AppColors.white,
+            highlightColor: AppColors.gray,
             child: Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
@@ -285,15 +284,14 @@ class _Shimmer extends StatelessWidget {
       ),
       SizedBox(
           child: Shimmer.fromColors(
-              baseColor: Colors.white,
-              highlightColor: const Color.fromARGB(255, 199, 199, 199),
+              baseColor: AppColors.white,
+              highlightColor: AppColors.loading,
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
                   'Próximas Ingestas',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.mukta(
-                    color: Colors.black,
                     height: 1,
                     fontSize: 25,
                   ),
@@ -302,8 +300,8 @@ class _Shimmer extends StatelessWidget {
       const CardShimmer(),
       const CardShimmer(),
       Shimmer.fromColors(
-        baseColor: Colors.white,
-        highlightColor: const Color.fromARGB(255, 199, 199, 199),
+        baseColor: AppColors.white,
+        highlightColor: AppColors.loading,
         child: Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+import 'package:movil/utilities/app_colors.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -21,7 +22,7 @@ class _LogInState extends State<LogIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      backgroundColor: const Color(0xFFFF3838),
+      backgroundColor: AppColors.mainRed,
       body: SingleChildScrollView(
           reverse: true,
           child: Column(
@@ -34,7 +35,8 @@ class _LogInState extends State<LogIn> {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height * 0.4,
-                    decoration: const BoxDecoration(color: Color(0xFFB31515)),
+                    decoration:
+                        const BoxDecoration(color: AppColors.secondaryRed),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -47,7 +49,7 @@ class _LogInState extends State<LogIn> {
                               textAlign: TextAlign.center,
                               maxLines: 4,
                               style: GoogleFonts.mukta(
-                                color: Colors.white,
+                                color: AppColors.white,
                                 fontSize: 40,
                                 height: 1,
                                 fontWeight: FontWeight.w600,
@@ -88,7 +90,7 @@ class _LogInCardState extends State<LogInCard> {
             width: MediaQuery.of(context).size.width * .9,
             height: MediaQuery.of(context).size.height * .4,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.white,
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
                 boxShadow: [
                   BoxShadow(
@@ -106,7 +108,7 @@ class _LogInCardState extends State<LogInCard> {
                     children: [
                       Text('Ingresa los siguientes datos',
                           style: GoogleFonts.mukta(
-                              color: Colors.black,
+                              color: AppColors.black,
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
                               height: 1)),
@@ -148,7 +150,7 @@ class _LogInCardState extends State<LogInCard> {
 
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: const Color(0xFFFF3838)),
+                            primary: AppColors.mainRed),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             _login();
@@ -156,7 +158,7 @@ class _LogInCardState extends State<LogInCard> {
                         },
                         child: Text('Iniciar Sesión',
                             style: GoogleFonts.mukta(
-                                color: Colors.white,
+                                color: AppColors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600)),
                       ),
@@ -169,7 +171,7 @@ class _LogInCardState extends State<LogInCard> {
                           },
                           child: Text('¿Olvidaste tu contraseña?',
                               style: GoogleFonts.mukta(
-                                  color: Colors.black,
+                                  color: AppColors.black,
                                   fontSize: 15,
                                   height: 1))),
                     ],

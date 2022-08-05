@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 
 class MedicCard extends StatelessWidget {
   final String name, mail, phone;
@@ -13,7 +14,7 @@ class MedicCard extends StatelessWidget {
       children: [
         Card(
             elevation: 5,
-            color: const Color(0xFFF0F0F0),
+            color: AppColors.cardBackground,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: Padding(
@@ -27,7 +28,7 @@ class MedicCard extends StatelessWidget {
                         child: Text('Nombre: $name',
                             style: GoogleFonts.mukta(
                                 fontSize: 18,
-                                color: Colors.black,
+                                color: AppColors.black,
                                 height: 1.5)),
                       ),
                       Align(
@@ -35,7 +36,7 @@ class MedicCard extends StatelessWidget {
                         child: Text('Correo: $mail',
                             style: GoogleFonts.mukta(
                                 fontSize: 18,
-                                color: Colors.black,
+                                color: AppColors.black,
                                 height: 1.5)),
                       ),
                       Align(
@@ -43,7 +44,7 @@ class MedicCard extends StatelessWidget {
                         child: Text('Telefono: $phone',
                             style: GoogleFonts.mukta(
                                 fontSize: 18,
-                                color: Colors.black,
+                                color: AppColors.black,
                                 height: 1.5)),
                       ),
                     ],

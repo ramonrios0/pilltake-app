@@ -11,6 +11,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 
 class PatientCard extends StatelessWidget {
   final String patientName, initDate, finalDate, patientID;
@@ -24,7 +25,7 @@ class PatientCard extends StatelessWidget {
         Center(
           child: Card(
             elevation: 5,
-            color: const Color(0xFFF0F0F0),
+            color: AppColors.cardBackground,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             child: Column(
@@ -52,19 +53,23 @@ class PatientCard extends StatelessWidget {
                             Text(
                               patientName,
                               style: GoogleFonts.mukta(
-                                  color: Colors.black,
+                                  color: AppColors.black,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
                               "Inició: $initDate",
                               style: GoogleFonts.mukta(
-                                  color: Colors.black, fontSize: 20, height: 1),
+                                  color: AppColors.black,
+                                  fontSize: 20,
+                                  height: 1),
                             ),
                             Text(
                               "Finaliza: $finalDate",
                               style: GoogleFonts.mukta(
-                                  color: Colors.black, fontSize: 20, height: 1),
+                                  color: AppColors.black,
+                                  fontSize: 20,
+                                  height: 1),
                             )
                           ]),
                     ),

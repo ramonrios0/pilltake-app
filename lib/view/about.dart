@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:movil/widgets/drawer.dart';
 
 import '../forms/form_login.dart';
+import '../utilities/app_colors.dart';
 
 class About extends StatelessWidget {
   const About({Key? key}) : super(key: key);
@@ -10,9 +11,9 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xFFFF3838),
+        backgroundColor: AppColors.mainRed,
         drawer: const DrawerMain(6),
-        appBar: AppBar(backgroundColor: const Color(0xFFB31515), elevation: 0),
+        appBar: AppBar(backgroundColor: AppColors.secondaryRed, elevation: 0),
         body: Column(mainAxisSize: MainAxisSize.max, children: [
           Align(
             alignment: const AlignmentDirectional(0.05, 0),
@@ -21,7 +22,7 @@ class About extends StatelessWidget {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.5,
-                decoration: const BoxDecoration(color: Color(0xFFB31515)),
+                decoration: const BoxDecoration(color: AppColors.secondaryRed),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -46,12 +47,12 @@ class About extends StatelessWidget {
               child: Column(children: [
             Text('Versión:',
                 style: GoogleFonts.mukta(
-                    color: Colors.white,
+                    color: AppColors.white,
                     fontSize: 22,
                     fontWeight: FontWeight.bold)),
             Text('Pre-Release 0.4.8',
                 style: GoogleFonts.mukta(
-                    color: Colors.white,
+                    color: AppColors.white,
                     fontSize: 20,
                     fontStyle: FontStyle.italic))
           ]))

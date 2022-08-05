@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 
 class HelpView extends StatelessWidget {
   const HelpView({Key? key}) : super(key: key);
@@ -14,8 +15,8 @@ class HelpView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(helpInfo[0],
-            style: GoogleFonts.mukta(color: Colors.white, fontSize: 20)),
-        backgroundColor: const Color(0xFFFF3838),
+            style: GoogleFonts.mukta(color: AppColors.white, fontSize: 20)),
+        backgroundColor: AppColors.mainRed,
         elevation: 0,
       ),
       body: Column(

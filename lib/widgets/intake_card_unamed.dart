@@ -10,6 +10,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 
 class IntakeUnamed extends StatelessWidget {
   int color = 0;
@@ -46,7 +47,7 @@ class IntakeUnamed extends StatelessWidget {
       children: [
         Card(
           elevation: 5,
-          color: const Color(0xFFF0F0F0),
+          color: AppColors.cardBackground,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Column(
@@ -64,7 +65,7 @@ class IntakeUnamed extends StatelessWidget {
                         Text(
                           medicine,
                           style: GoogleFonts.mukta(
-                            color: Colors.black,
+                            color: AppColors.black,
                             height: 1,
                             fontSize: 20,
                           ),
@@ -72,7 +73,7 @@ class IntakeUnamed extends StatelessWidget {
                         Text(
                           "$hour  $date",
                           style: GoogleFonts.mukta(
-                            color: Colors.black,
+                            color: AppColors.black,
                             height: 1,
                             fontSize: 20,
                           ),

@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movil/forms/form_patient.dart';
+import 'package:movil/utilities/app_colors.dart';
 
 class ProfileHeader extends StatelessWidget {
   final String _username;
@@ -20,7 +21,7 @@ class ProfileHeader extends StatelessWidget {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * .15,
-          decoration: const BoxDecoration(color: Color(0xFFB31515)),
+          decoration: const BoxDecoration(color: AppColors.secondaryRed),
           child: Column(children: [
             Padding(
               padding: const EdgeInsets.all(20),
@@ -29,7 +30,7 @@ class ProfileHeader extends StatelessWidget {
                   _username,
                   maxLines: 3,
                   style: GoogleFonts.mukta(
-                    color: Colors.white,
+                    color: AppColors.white,
                     fontSize: 30,
                     height: 1,
                   ),

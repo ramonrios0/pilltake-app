@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:movil/utilities/app_colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../forms/form_login.dart';
@@ -28,7 +29,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFF3838),
+      backgroundColor: AppColors.mainRed,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -39,7 +40,7 @@ class _SplashState extends State<Splash> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height * 0.5,
-                decoration: const BoxDecoration(color: Color(0xFFB31515)),
+                decoration: const BoxDecoration(color: AppColors.secondaryRed),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -66,7 +67,7 @@ class _SplashState extends State<Splash> {
             height: 60,
             child: CircularProgressIndicator(
               backgroundColor: Colors.white,
-              color: Color(0xFFB31515),
+              color: AppColors.secondaryRed,
             ),
           ))
         ],

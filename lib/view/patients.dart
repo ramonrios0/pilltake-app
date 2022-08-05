@@ -9,6 +9,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 import 'package:movil/widgets/drawer.dart';
 import 'package:movil/widgets/generic_header.dart';
 import 'package:movil/widgets/patient_card.dart';
@@ -40,9 +41,9 @@ class _PatientsState extends State<Patients> {
       appBar: AppBar(
         title: Text(
           'Pacientes',
-          style: GoogleFonts.mukta(color: Colors.white),
+          style: GoogleFonts.mukta(color: AppColors.white),
         ),
-        backgroundColor: const Color(0xFFFF3838),
+        backgroundColor: AppColors.mainRed,
         elevation: 0,
       ),
       body: Column(

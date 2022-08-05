@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movil/models/intakes_model.dart';
+import 'package:movil/utilities/app_colors.dart';
 import 'package:movil/widgets/intake_card_unamed.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,9 +28,9 @@ class _PatientAllIntakesState extends State<PatientAllIntakes> {
       appBar: AppBar(
         title: Text(
           'Próximas',
-          style: GoogleFonts.mukta(color: Colors.white, fontSize: 20),
+          style: GoogleFonts.mukta(color: AppColors.white, fontSize: 20),
         ),
-        backgroundColor: const Color(0xFFFF3838),
+        backgroundColor: AppColors.mainRed,
         elevation: 0,
       ),
       body: Column(children: <Widget>[

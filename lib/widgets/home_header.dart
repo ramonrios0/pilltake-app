@@ -7,6 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 
 import '../forms/form_home.dart';
 
@@ -19,7 +20,7 @@ class HomeHeader extends StatelessWidget {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.1,
-          decoration: const BoxDecoration(color: Color(0xFFB31515)),
+          decoration: const BoxDecoration(color: AppColors.secondaryRed),
           child: Column(children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
@@ -28,7 +29,7 @@ class HomeHeader extends StatelessWidget {
                   '¡Bienvenido!',
                   maxLines: 3,
                   style: GoogleFonts.mukta(
-                    color: Colors.white,
+                    color: AppColors.white,
                     fontSize: 30,
                     height: 1,
                   ),

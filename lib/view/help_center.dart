@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 import 'package:movil/widgets/drawer.dart';
 import 'package:movil/widgets/generic_header.dart';
 import 'package:movil/widgets/help_card.dart';
@@ -21,8 +22,8 @@ class Help extends StatelessWidget {
       drawer: const DrawerMain(5),
       appBar: AppBar(
           title: Text('Centro de ayuda',
-              style: GoogleFonts.mukta(color: Colors.white)),
-          backgroundColor: const Color(0xFFFF3838),
+              style: GoogleFonts.mukta(color: AppColors.white)),
+          backgroundColor: AppColors.mainRed,
           elevation: 0),
       body: Column(
         children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movil/utilities/app_colors.dart';
 
 class ForgotCard extends StatefulWidget {
   const ForgotCard({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _ForgotCardState extends State<ForgotCard> {
           width: MediaQuery.of(context).size.width * .9,
           height: MediaQuery.of(context).size.height * .3,
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               borderRadius: const BorderRadius.all(Radius.circular(10)),
               boxShadow: [
                 BoxShadow(
@@ -36,7 +37,7 @@ class _ForgotCardState extends State<ForgotCard> {
                 children: [
                   Text('Ingresa el correo de la cuenta',
                       style: GoogleFonts.mukta(
-                          color: Colors.black,
+                          color: AppColors.black,
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 1)),
@@ -53,8 +54,8 @@ class _ForgotCardState extends State<ForgotCard> {
                         border: OutlineInputBorder()),
                   ),
                   ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: const Color(0xFFFF3838)),
+                      style:
+                          ElevatedButton.styleFrom(primary: AppColors.mainRed),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
@@ -65,7 +66,7 @@ class _ForgotCardState extends State<ForgotCard> {
                       child: Text(
                         'Cambiar contraseña',
                         style: GoogleFonts.mukta(
-                            color: Colors.white,
+                            color: AppColors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.w600),
                       ))
