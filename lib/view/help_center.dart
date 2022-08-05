@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/utilities/app_colors.dart';
-import 'package:movil/widgets/drawer.dart';
-import 'package:movil/widgets/generic_header.dart';
-import 'package:movil/widgets/help_card.dart';
+
+import '../utilities/app_colors.dart';
+import '../widgets/drawer.dart';
+import '../widgets/generic_header.dart';
+import '../widgets/help_card.dart';
 
 class Help extends StatelessWidget {
   const Help({Key? key}) : super(key: key);

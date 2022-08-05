@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/widgets/drawer.dart';
 
+import '../widgets/drawer.dart';
 import '../forms/form_login.dart';
 import '../utilities/app_colors.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/utilities/app_colors.dart';
-import 'package:movil/widgets/login_forgot_card.dart';
 
+import '../utilities/app_colors.dart';
+import '../widgets/login_forgot_card.dart';
 import '../forms/form_login.dart';
 
 class LoginForgot extends StatelessWidget {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/utilities/app_colors.dart';
+
+import '../utilities/app_colors.dart';
 
 class HelpView extends StatelessWidget {
   const HelpView({Key? key}) : super(key: key);

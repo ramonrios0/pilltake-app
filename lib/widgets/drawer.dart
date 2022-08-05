@@ -5,13 +5,12 @@
  * de la aplicación.
  *
  */
-
-import 'package:movil/utilities/app_colors.dart';
-import 'package:movil/view/splash.dart';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../utilities/app_colors.dart';
+import '../view/splash.dart';
 
 class DrawerMain extends StatelessWidget {
   final int page;

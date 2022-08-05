@@ -10,7 +10,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/utilities/app_colors.dart';
+
+import '../utilities/app_colors.dart';
 
 class IntakeUnamed extends StatelessWidget {
   int color = 0;

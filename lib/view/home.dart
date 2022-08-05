@@ -1,16 +1,16 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/models/intakesnamed_model.dart';
-import '../utilities/app_colors.dart';
-import 'package:movil/widgets/card_shimmer.dart';
-import 'package:movil/widgets/drawer.dart';
-import 'package:movil/widgets/home_header.dart';
-import 'package:movil/widgets/intake_card_named.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:movil/variables.dart' as globals;
-import 'package:shimmer/shimmer.dart';
+import '../models/intakesnamed_model.dart';
+import '../utilities/app_colors.dart';
+import '../widgets/card_shimmer.dart';
+import '../widgets/drawer.dart';
+import '../widgets/home_header.dart';
+import '../widgets/intake_card_named.dart';
+import '../variables.dart' as globals;
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

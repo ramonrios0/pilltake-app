@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/models/user.dart';
-import 'package:movil/utilities/app_colors.dart';
-import 'package:movil/widgets/drawer.dart';
-import 'package:movil/widgets/medic_card.dart';
-import 'package:movil/widgets/profile_card.dart';
-import 'package:movil/widgets/profile_header.dart';
 import 'package:http/http.dart' as http;
-
 import 'package:movil/variables.dart' as globals;
 import 'package:shimmer/shimmer.dart';
+
+import '../models/user.dart';
+import '../utilities/app_colors.dart';
+import '../widgets/drawer.dart';
+import '../widgets/medic_card.dart';
+import '../widgets/profile_card.dart';
+import '../widgets/profile_header.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);

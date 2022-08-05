@@ -8,16 +8,15 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/models/intakes_model.dart';
-import 'package:movil/utilities/app_colors.dart';
-import 'package:movil/widgets/bar_chart.dart';
-import 'package:movil/widgets/intake_card_unamed.dart';
-import 'package:movil/widgets/patient_header.dart';
-
 import 'package:http/http.dart' as http;
 import 'package:movil/variables.dart' as globals;
 import 'package:shimmer/shimmer.dart';
 
+import '../models/intakes_model.dart';
+import '../utilities/app_colors.dart';
+import '../widgets/bar_chart.dart';
+import '../widgets/intake_card_unamed.dart';
+import '../widgets/patient_header.dart';
 import '../widgets/card_shimmer.dart';
 
 class PatientDetails extends StatefulWidget {

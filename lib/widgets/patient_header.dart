@@ -9,8 +9,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/forms/form_patient.dart';
-import 'package:movil/utilities/app_colors.dart';
+
+import '../forms/form_patient.dart';
+import '../utilities/app_colors.dart';
 
 class PatientHeader extends StatelessWidget {
   final String nombreUsuario, finalDate, initDate;

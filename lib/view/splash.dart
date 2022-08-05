@@ -1,13 +1,12 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:movil/utilities/app_colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../forms/form_login.dart';
 import 'package:movil/variables.dart' as globals;
+
+import '../utilities/app_colors.dart';
+import '../forms/form_login.dart';
 
 class Splash extends StatefulWidget {
   final int type;

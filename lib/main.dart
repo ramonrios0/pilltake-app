@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:movil/view/about.dart';
-import 'package:movil/view/devices.dart';
-import 'package:movil/view/help_center.dart';
-import 'package:movil/view/help_view.dart';
-import 'package:movil/view/home.dart';
-import 'package:movil/view/login_fogot.dart';
-import 'package:movil/view/patient_all_intakes.dart';
-import 'package:movil/view/patient_details.dart';
-import 'package:movil/view/patient_taken.dart';
-import 'package:movil/view/patient_untaken.dart';
-import 'package:movil/view/patients.dart';
-import 'package:movil/view/profile.dart';
-import 'package:movil/view/splash.dart';
 
+import 'view/about.dart';
+import 'view/devices.dart';
+import 'view/help_center.dart';
+import 'view/help_view.dart';
+import 'view/home.dart';
+import 'view/login_fogot.dart';
+import 'view/patient_all_intakes.dart';
+import 'view/patient_details.dart';
+import 'view/patient_taken.dart';
+import 'view/patient_untaken.dart';
+import 'view/patients.dart';
+import 'view/profile.dart';
+import 'view/splash.dart';
 import 'view/login.dart';
 
 void main() {

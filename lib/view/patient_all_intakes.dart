@@ -1,14 +1,14 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/models/intakes_model.dart';
-import 'package:movil/utilities/app_colors.dart';
-import 'package:movil/widgets/intake_card_unamed.dart';
+import 'package:movil/variables.dart' as globals;
 import 'package:http/http.dart' as http;
 
+import '../models/intakes_model.dart';
+import '../utilities/app_colors.dart';
+import '../widgets/intake_card_unamed.dart';
 import '../widgets/card_shimmer.dart';
 import '../widgets/generic_header.dart';
-import 'package:movil/variables.dart' as globals;
 
 class PatientAllIntakes extends StatefulWidget {
   const PatientAllIntakes({Key? key}) : super(key: key);

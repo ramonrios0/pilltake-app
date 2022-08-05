@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'package:movil/utilities/app_colors.dart';
-import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../forms/form_login.dart';
 import 'package:movil/variables.dart' as globals;
+import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+
+import '../utilities/app_colors.dart';
+import '../forms/form_login.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({Key? key}) : super(key: key);

@@ -1,6 +1,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:movil/utilities/app_colors.dart';
+
+import '../utilities/app_colors.dart';
 
 class DetailsChart extends StatelessWidget {
   final double taken;

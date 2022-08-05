@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/utilities/app_colors.dart';
-import 'package:movil/widgets/card_shimmer.dart';
-import 'package:movil/widgets/drawer.dart';
-import 'package:movil/widgets/generic_header.dart';
+
+import '../utilities/app_colors.dart';
+import '../widgets/card_shimmer.dart';
+import '../widgets/drawer.dart';
+import '../widgets/generic_header.dart';
 
 class Devices extends StatelessWidget {
   const Devices({Key? key}) : super(key: key);
