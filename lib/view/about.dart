@@ -54,7 +54,17 @@ class About extends StatelessWidget {
                 style: GoogleFonts.mukta(
                     color: AppColors.white,
                     fontSize: 20,
-                    fontStyle: FontStyle.italic))
+                    fontStyle: FontStyle.italic)),
+            ElevatedButton(
+                style:
+                    ElevatedButton.styleFrom(primary: AppColors.secondaryRed),
+                onPressed: () =>
+                    Navigator.of(context).pushNamed('/about/licenses'),
+                child: Text(
+                  'Ver licencias',
+                  style: GoogleFonts.mukta(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                ))
           ]))
         ]));
   }
