@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +19,7 @@ class Licenses extends StatelessWidget {
         title: Text('Licencias', style: GoogleFonts.mukta()),
       ),
       body: FutureBuilder<List<License>>(
-        future: loadLicenses(),
+        future: loadLicenses(context),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
@@ -34,12 +36,14 @@ class Licenses extends StatelessWidget {
     );
   }
 
-  Future<List<License>> loadLicenses() async =>
-      LicenseRegistry.licenses.asyncMap<License>((license) async {
-        final title = license.packages.join('\n');
-        final text = license.paragraphs.map<String>((e) => e.text).join('\n\n');
-        return License(title, text);
-      }).toList();
+  Future<List<License>> loadLicenses(BuildContext context) async {
+    final bundle = DefaultAssetBundle.of(context);
+    final licenses = await bundle.loadString('assets/licenses.json');
+    return json
+        .decode(licenses)
+        .map<License>((license) => License.fromJson(license))
+        .toList();
+  }
 }
 
 class _LicensesWidget extends StatelessWidget {

@@ -30,7 +30,7 @@ class HelpView extends StatelessWidget {
                 return Padding(
                     padding: const EdgeInsets.fromLTRB(20, 0, 20, 5),
                     child: Text(helpInfo[i],
-                        style: GoogleFonts.mukta(fontSize: 17)));
+                        style: GoogleFonts.mukta(fontSize: 18, height: 1)));
               } else {
                 return const Text('');
               }
