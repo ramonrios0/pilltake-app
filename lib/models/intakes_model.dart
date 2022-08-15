@@ -46,10 +46,10 @@ class Intake {
   String intakeTime;
 
   factory Intake.fromJson(Map<String, dynamic> json) => Intake(
-        id: json["id"],
+        id: int.parse(json["id"]),
         medicine: json["medicine"],
-        taken: json["taken"],
-        patient: json["patient"],
+        taken: int.parse(json["taken"]),
+        patient: int.parse(json["patient"]),
         time: DateTime.parse(json["time"]),
         intakeTime: json["intakeTime"],
       );

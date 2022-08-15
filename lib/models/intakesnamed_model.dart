@@ -49,7 +49,7 @@ class Intake {
   factory Intake.fromJson(Map<String, dynamic> json) => Intake(
         name: json["name"],
         medicine: json["medicine"],
-        taken: json["taken"],
+        taken: int.parse(json["taken"]),
         time: DateTime.parse(json["time"]),
       );
 

@@ -201,7 +201,7 @@ class _LogInCardState extends State<LogInCard> {
       var msg = json.decode(response.body);
 
       String username = msg['name'];
-      int userID = msg['id'];
+      int userID = int.parse(msg['id']);
 
       globals.username = username;
       globals.userID = userID;

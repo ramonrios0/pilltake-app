@@ -42,7 +42,7 @@ class Patient {
   DateTime end;
 
   factory Patient.fromJson(Map<String, dynamic> json) => Patient(
-        id: json["id"],
+        id: int.parse(json["id"]),
         name: json["name"],
         start: DateTime.parse(json["start"]),
         end: DateTime.parse(json["end"]),
