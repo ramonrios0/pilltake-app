@@ -8,4 +8,4 @@ String username = '';
 
 //Url de la API
 String url =
-    'https://pruebasrojr.000webhostapp.com/pilltakeapi//Controller/Api/';
+    'https://pruebasrojr.000webhostapp.com/pilltakeapi/Controller/Api/';
