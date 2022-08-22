@@ -35,7 +35,7 @@ class Intake {
     required this.taken,
     required this.patient,
     required this.time,
-    required this.intakeTime,
+    this.intakeTime,
   });
 
   int id;
@@ -43,7 +43,7 @@ class Intake {
   int taken;
   int patient;
   DateTime time;
-  String intakeTime;
+  String? intakeTime;
 
   factory Intake.fromJson(Map<String, dynamic> json) => Intake(
         id: int.parse(json["id"]),

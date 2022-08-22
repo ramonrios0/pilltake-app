@@ -266,7 +266,7 @@ class _Shimmer extends StatelessWidget {
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)),
               child: SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.48, height: 40),
+                  width: MediaQuery.of(context).size.width * 0.40, height: 40),
             ),
           ),
           Shimmer.fromColors(
