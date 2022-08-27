@@ -102,7 +102,7 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     notifications.initNotifications();
-    Workmanager().initialize(callbackDispatcher, isInDebugMode: true);
+    Workmanager().initialize(callbackDispatcher, isInDebugMode: false);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Timer(const Duration(seconds: 1), () => _validate(context));
     });
@@ -184,7 +184,8 @@ class _SplashState extends State<Splash> {
           globals.username = prefs.getString('username').toString();
           String id = prefs.getInt('userID').toString();
           globals.userID = int.parse(id);
-          Workmanager().registerPeriodicTask("ptbs.test", "testTast",
+          Workmanager().registerPeriodicTask(
+              "pilltake.notifications", "IntakesChecking",
               inputData: <String, String>{"id": id});
           Navigator.of(context)
               .pushNamedAndRemoveUntil('/home', (route) => false);

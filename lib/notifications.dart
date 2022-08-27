@@ -17,7 +17,7 @@ class NotificationApi {
 
   void sendNotification(String? title, String? body) async {
     NotificationDetails details = const NotificationDetails(
-      android: AndroidNotificationDetails('pilltake', 'pt notify',
+      android: AndroidNotificationDetails('Pilltake', 'Pilltake notifications',
           importance: Importance.max, priority: Priority.high),
       iOS: IOSNotificationDetails(),
     );
