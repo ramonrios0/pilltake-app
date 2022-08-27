@@ -4,9 +4,90 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:movil/variables.dart' as globals;
+import 'package:workmanager/workmanager.dart';
+import 'package:http/http.dart' as http;
 
+import '../models/intakesnamed_model.dart';
 import '../utilities/app_colors.dart';
 import '../forms/form_login.dart';
+import '../notifications.dart';
+
+NotificationApi notifications = NotificationApi();
+
+@pragma('vm:entry-point')
+void callbackDispatcher() {
+  /*
+   * Aquí se maneja el script que se ejecuta en segundo plano.
+   * Este se ejecuta en un intervalo de 15 minutos y sirve para verificar si existen
+   * medicinas que se deban de dispensar y, en el caso de ser correcto, enviar una
+   * notificación local al télefono.
+   * Hay tres revisiones, cada una con una notificación en caso de que sus condiciones
+   * sean verdaderas:
+   * 
+   *  1.- La primera verifica si el tiempo actual es menor al tiempo de ingesta del
+   *      medicamento, en caso de ser verdadero procede a verificar si el tiempo
+   *      entre la hora de ingesta y ahora es menor a 30 minutos. De ser correcto
+   *      manda una notificación mostrando que el medicamento ya se puede dispensar.
+   *  2.- La segunda verifica si el tiempo actual es mayor al tiempo de ingesta del
+   *      medicamento, en caso de ser verdadero procede a verificar si la diferencia
+   *      entre el tiempo de ingesta y el tiempo actual no es mayor de una hora. En
+   *      caso de ser correcto se manda una notificación al télefono recordando al
+   *      usuario de dispensar el medicamento.
+   *  3.- La tercera verifica si la diferencia entre el tiempo actual y la hora de
+   *      ingesta es mayor de una hora. En caso de ser correcto se envia una petición
+   *      http a la api para cambiar el estado de la ingesta a -1 (No ingerido) y 
+   *      manda una notificación al telefono avisando al usuario que la ingesta no
+   *      se hizo.
+   * 
+   * En caso de que ninguna de las verificaciones anteriores sea verdadera, se
+   * supondra que el tiempo de ingesta aún no es lo suficientemente próximo como
+   * para recordar al usuario de la toma.
+   */
+  Workmanager().executeTask((taskName, inputData) async {
+    final url =
+        Uri.parse('${globals.url}intakes.php?type=2&id=${inputData!['id']}');
+    final response = await http.get(url);
+    if (response.statusCode == 200) {
+      IntakesNamedResponse intakeResponse =
+          intakesNamedResponseFromJson(response.body);
+      List<Intake> remaining = intakeResponse.remaining;
+      if (remaining.isNotEmpty) {
+        for (int i = 0; i < remaining.length; i++) {
+          var intake = remaining[i];
+          DateTime now = DateTime.now();
+          DateTime intakeTime = DateTime.parse(intake.time.toString());
+          const Duration firstVerification = Duration(minutes: 30);
+          const Duration secondVerificacion = Duration(hours: 1);
+          // Primera verificación
+          if ((now.isBefore(intakeTime)) &&
+              (intakeTime.difference(now) <= firstVerification)) {
+            notifications.sendNotification('Ya se puede dispensar',
+                '${intake.medicine} para ${intake.name}');
+          }
+          // Segunda verificación
+          else if ((now.isAfter(intakeTime)) &&
+              (now.difference(intakeTime) <= secondVerificacion)) {
+            notifications.sendNotification('No se ha dispensado',
+                '${intake.medicine} para ${intake.name}');
+          }
+          // Tercera verificación
+          else if ((now.isAfter(intakeTime.add(const Duration(hours: 1))))) {
+            final url = Uri.parse(
+                '${globals.url}intakes.php?type=3&id=${intake.idIngesta}');
+            final response = await http.get(url);
+            if (response.statusCode == 200) {
+              notifications.sendNotification(
+                  'No se dispensó', '${intake.medicine} para ${intake.name}');
+            }
+          }
+        }
+      }
+    } else {
+      return Future.value(true);
+    }
+    return Future.value(true);
+  });
+}
 
 class Splash extends StatefulWidget {
   final int type;
@@ -20,6 +101,8 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
+    notifications.initNotifications();
+    Workmanager().initialize(callbackDispatcher, isInDebugMode: true);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Timer(const Duration(seconds: 1), () => _validate(context));
     });
@@ -101,6 +184,8 @@ class _SplashState extends State<Splash> {
           globals.username = prefs.getString('username').toString();
           String id = prefs.getInt('userID').toString();
           globals.userID = int.parse(id);
+          Workmanager().registerPeriodicTask("ptbs.test", "testTast",
+              inputData: <String, String>{"id": id});
           Navigator.of(context)
               .pushNamedAndRemoveUntil('/home', (route) => false);
         } else {
