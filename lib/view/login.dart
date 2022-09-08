@@ -193,6 +193,7 @@ class _LogInCardState extends State<LogInCard> {
     //API URL
     var url = Uri.parse('${globals.url}login.php');
     var response = await http.post(url, body: {
+      'type': '1',
       'name': userController.text,
       'pass': pdwController.text,
     });

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
+import 'package:movil/variables.dart' as globals;
 
 import '../utilities/app_colors.dart';
 
@@ -12,6 +14,7 @@ class ForgotCard extends StatefulWidget {
 
 class _ForgotCardState extends State<ForgotCard> {
   final _formKey = GlobalKey<FormState>();
+  final mailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -53,15 +56,14 @@ class _ForgotCardState extends State<ForgotCard> {
                         labelText: 'Correo Electrónico',
                         hintText: 'correo@ejemplo.com',
                         border: OutlineInputBorder()),
+                    controller: mailController,
                   ),
                   ElevatedButton(
                       style:
                           ElevatedButton.styleFrom(primary: AppColors.mainRed),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                              content: Text(
-                                  'Revisa la bandeja de tu correo para continuar')));
+                          _reset();
                         }
                       },
                       child: Text(
@@ -78,5 +80,28 @@ class _ForgotCardState extends State<ForgotCard> {
         )
       ],
     );
+  }
+
+  Future _reset() async {
+    var url = Uri.parse('${globals.url}login.php');
+    var response = await http.post(url, body: {
+      'type': '2',
+      'mail': mailController.text,
+    });
+
+    switch (response.statusCode) {
+      case 200:
+        showMessage('Correo enviado, no olvides revisar en spam');
+        break;
+      case 408:
+        showMessage('Ocurrió un error, intentalo de nuevo más tarde');
+        break;
+      case 404:
+        showMessage('El correo no tiene una cuenta asociada');
+    }
+  }
+
+  void showMessage(String text) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
 }
