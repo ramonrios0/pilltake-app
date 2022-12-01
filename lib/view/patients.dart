@@ -61,7 +61,10 @@ class _PatientsState extends State<Patients> {
                   return Center(
                     child: Text(
                       'Ocurrió un error, intentalo de nuevo más tarde.',
-                      style: GoogleFonts.mukta(fontStyle: FontStyle.italic),
+                      style: GoogleFonts.mukta(
+                          fontStyle: FontStyle.normal,
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold),
                     ),
                   );
                 }
