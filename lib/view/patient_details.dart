@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:movil/variables.dart' as globals;
+import 'package:movil/widgets/recipe_card.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../models/intakes_model.dart';
@@ -85,11 +86,25 @@ class _DetailsBuilder extends StatelessWidget {
         Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
             child: Text(
+              'Receta',
+              style: GoogleFonts.mukta(
+                  color: AppColors.black, fontSize: 25, height: 1),
+            )),
+// Receta
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+          child: FadeInLeft(
+              duration: const Duration(milliseconds: 250),
+              child: RecipeCard(id: patientID)),
+        ),
+// Gráfica de estadísticas
+        Padding(
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
+            child: Text(
               'Estadísticas',
               style: GoogleFonts.mukta(
                   color: AppColors.black, fontSize: 25, height: 1),
             )),
-// Gráfica de estadísticas
         FadeInLeft(
             duration: const Duration(milliseconds: 250),
             child: DetailsChart(intakeData[0], intakeData[1], intakeData[2])),
