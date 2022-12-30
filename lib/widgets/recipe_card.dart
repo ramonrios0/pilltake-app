@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:movil/utilities/app_colors.dart';
 import 'package:movil/variables.dart' as globals;
 import 'package:http/http.dart' as http;
+import 'package:shimmer/shimmer.dart';
 
 import '../models/recipes_model.dart';
 
@@ -27,7 +28,7 @@ class RecipeCard extends StatelessWidget {
               builder: (BuildContext context,
                   AsyncSnapshot<RecipeResponse> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
+                  return const _Shimmer();
                 } else if (snapshot.hasData &&
                     snapshot.connectionState == ConnectionState.done) {
                   return _RecipeBuilder(snapshot.data!.recipe);
@@ -98,5 +99,40 @@ class _RecipeBuilder extends StatelessWidget {
     }
 
     return recipeFormatted;
+  }
+}
+
+class _Shimmer extends StatelessWidget {
+  const _Shimmer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        children: [
+          Shimmer.fromColors(
+              baseColor: AppColors.white,
+              highlightColor: AppColors.loading,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: 20,
+                ),
+              )),
+          Shimmer.fromColors(
+              baseColor: AppColors.white,
+              highlightColor: AppColors.loading,
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: 20,
+                ),
+              ))
+        ]);
   }
 }

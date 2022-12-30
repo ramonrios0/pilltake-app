@@ -254,6 +254,31 @@ class _Shimmer extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Text(
+                  'Receta',
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.mukta(
+                    height: 1,
+                    fontSize: 25,
+                  ),
+                ),
+              ))),
+      Shimmer.fromColors(
+        baseColor: AppColors.white,
+        highlightColor: AppColors.loading,
+        child: Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          child: SizedBox(
+              width: MediaQuery.of(context).size.width * 0.9, height: 100),
+        ),
+      ),
+      SizedBox(
+          child: Shimmer.fromColors(
+              baseColor: AppColors.white,
+              highlightColor: AppColors.loading,
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
                   'Estadisticas',
                   textAlign: TextAlign.left,
                   style: GoogleFonts.mukta(
