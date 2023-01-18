@@ -7,5 +7,4 @@ int userID = 0;
 String username = '';
 
 //Url de la API
-String url =
-    'https://pruebasrojr.000webhostapp.com/pilltakeapi/Controller/Api/';
+String url = '';
