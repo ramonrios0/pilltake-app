@@ -2,6 +2,7 @@
 
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:movil/variables.dart' as globals;
 import 'package:workmanager/workmanager.dart';
@@ -72,8 +73,10 @@ void callbackDispatcher() {
           }
           // Tercera verificación
           else if ((now.isAfter(intakeTime.add(const Duration(hours: 1))))) {
+            const String date = '';
+            const String time = '';
             final url = Uri.parse(
-                '${globals.url}intakes.php?type=3&id=${intake.idIngesta}');
+                '${globals.url}intakes.php?type=3&id=${intake.idIngesta}&taken=0&date=$date&time=$time');
             final response = await http.get(url);
             if (response.statusCode == 200) {
               notifications.sendNotification(

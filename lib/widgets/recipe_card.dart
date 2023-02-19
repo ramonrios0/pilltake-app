@@ -28,7 +28,7 @@ class RecipeCard extends StatelessWidget {
               builder: (BuildContext context,
                   AsyncSnapshot<RecipeResponse> snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const _Shimmer();
+                  return _Shimmer();
                 } else if (snapshot.hasData &&
                     snapshot.connectionState == ConnectionState.done) {
                   return _RecipeBuilder(snapshot.data!.recipe);
@@ -103,8 +103,6 @@ class _RecipeBuilder extends StatelessWidget {
 }
 
 class _Shimmer extends StatelessWidget {
-  const _Shimmer({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ListView(

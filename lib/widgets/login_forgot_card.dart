@@ -59,8 +59,8 @@ class _ForgotCardState extends State<ForgotCard> {
                     controller: mailController,
                   ),
                   ElevatedButton(
-                      style:
-                          ElevatedButton.styleFrom(primary: AppColors.mainRed),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.mainRed),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           _reset();

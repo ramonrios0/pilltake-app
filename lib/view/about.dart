@@ -56,8 +56,8 @@ class About extends StatelessWidget {
                     fontSize: 20,
                     fontStyle: FontStyle.italic)),
             ElevatedButton(
-                style:
-                    ElevatedButton.styleFrom(primary: AppColors.secondaryRed),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.secondaryRed),
                 onPressed: () =>
                     Navigator.of(context).pushNamed('/about/licenses'),
                 child: Text(

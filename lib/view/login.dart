@@ -150,7 +150,7 @@ class _LogInCardState extends State<LogInCard> {
 
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: AppColors.mainRed),
+                            backgroundColor: AppColors.mainRed),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             _login();

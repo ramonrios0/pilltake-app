@@ -128,8 +128,8 @@ class _DetailsBuilder extends StatelessWidget {
                 child: SizedBox(
                     width: MediaQuery.of(context).size.width * .45,
                     child: ElevatedButton(
-                      style:
-                          ElevatedButton.styleFrom(primary: AppColors.mainRed),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.mainRed),
                       child: const Text('Ver últimas faltas'),
                       onPressed: () {
                         Navigator.of(context).pushNamed(
@@ -168,7 +168,8 @@ class _DetailsBuilder extends StatelessWidget {
                         '/patients/details/all-intakes',
                         arguments: {'patientID': patientID});
                   },
-                  style: ElevatedButton.styleFrom(primary: AppColors.gray),
+                  style:
+                      ElevatedButton.styleFrom(backgroundColor: AppColors.gray),
                   child: const Text('Próximas ingestas'),
                 )))
       ],
