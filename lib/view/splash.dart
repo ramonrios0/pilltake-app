@@ -58,7 +58,7 @@ void callbackDispatcher() {
           DateTime now = DateTime.now();
           DateTime intakeTime = DateTime.parse(intake.time.toString());
           const Duration firstVerification = Duration(minutes: 30);
-          const Duration secondVerificacion = Duration(hours: 1);
+          const Duration secondVerificacion = Duration(minutes: 30);
           // Primera verificación
           if ((now.isBefore(intakeTime)) &&
               (intakeTime.difference(now) <= firstVerification)) {
@@ -72,11 +72,9 @@ void callbackDispatcher() {
                 '${intake.medicine} para ${intake.name}');
           }
           // Tercera verificación
-          else if ((now.isAfter(intakeTime.add(const Duration(hours: 1))))) {
-            const String date = '';
-            const String time = '';
+          else if ((now.isAfter(intakeTime.add(const Duration(minutes: 30))))) {
             final url = Uri.parse(
-                '${globals.url}intakes.php?type=3&id=${intake.idIngesta}&taken=0&date=$date&time=$time');
+                '${globals.url}intakes.php?type=3&id=${intake.idIngesta}');
             final response = await http.get(url);
             if (response.statusCode == 200) {
               notifications.sendNotification(
