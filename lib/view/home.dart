@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
@@ -24,6 +25,7 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     _getIntakes();
+    _getPermission();
   }
 
   @override
@@ -67,6 +69,22 @@ class _HomeState extends State<Home> {
         Uri.parse('${globals.url}intakes.php?type=2&id=${globals.userID}');
     final response = await http.get(url);
     return intakesNamedResponseFromJson(response.body);
+  }
+}
+
+void _getPermission() async {
+  Map<Permission, PermissionStatus> statuses = await [
+    Permission.bluetooth,
+    Permission.bluetoothScan,
+    Permission.bluetoothConnect,
+    Permission.location,
+    Permission.notification
+  ].request();
+  if (await Permission.bluetooth.isDenied) {
+    const SnackBar(content: Text('Bluetooth desactivado'));
+  }
+  if (await Permission.notification.isDenied) {
+    const SnackBar(content: Text('Notificaciones desactivadas'));
   }
 }
 

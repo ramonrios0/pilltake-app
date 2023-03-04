@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:movil/view/devices.dart';
 import 'package:movil/view/licenses.dart';
 
 import 'view/about.dart';
-import 'view/device_config.dart';
-import 'view/devices.dart';
+import 'view/device_select.dart';
 import 'view/help_center.dart';
 import 'view/help_view.dart';
 import 'view/home.dart';
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         '/patients/details/untaken': (context) => const PatientUntaken(),
         '/patients/details/all-intakes': (context) => const PatientAllIntakes(),
         '/devices': (context) => const Devices(),
-        'devices/config': (context) => const DeviceConfig(),
+        'devices/select': (context) => const SelectDevice(),
         '/profile': (context) => const Profile(),
         '/about': (context) => const About(),
         '/about/licenses': (context) => const Licenses(),
