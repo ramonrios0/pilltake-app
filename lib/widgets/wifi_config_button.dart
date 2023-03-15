@@ -67,7 +67,7 @@ class _WiFiConfigButtonState extends State<WiFiConfigButton> {
     }
 
     return Container(
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: AppColors.cardBackground,
             borderRadius: BorderRadius.all(radius),
@@ -113,7 +113,6 @@ class _WiFiConfigButtonState extends State<WiFiConfigButton> {
                   );
 
                   if (selectedDevice != null) {
-                    print('Discovery -> selected ${selectedDevice.address}');
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) {
@@ -123,9 +122,7 @@ class _WiFiConfigButtonState extends State<WiFiConfigButton> {
                         },
                       ),
                     );
-                  } else {
-                    print('Discovery -> no device selected');
-                  }
+                  } else {}
                 },
               ),
             )

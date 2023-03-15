@@ -7,4 +7,4 @@ int userID = 0;
 String username = '';
 
 //Url de la API
-String url = 'https://paramisdemos.com/tesis-dispensador/pilltakeapi/Controller/Api/';
+String url = '';

@@ -3,10 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/widgets/device_card.dart';
+import 'package:PillTake/widgets/device_card.dart';
 
 import '../utilities/app_colors.dart';
-import '../widgets/drawer.dart';
 
 class SelectDevice extends StatefulWidget {
   final bool start;

@@ -9,7 +9,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/variables.dart' as globals;
+import 'package:PillTake/variables.dart' as globals;
 import 'package:http/http.dart' as http;
 
 import '../utilities/app_colors.dart';
@@ -56,7 +56,7 @@ class _PatientsState extends State<Patients> {
                   return const _Shimmer();
                 } else if (snapshot.hasData &&
                     snapshot.connectionState == ConnectionState.done) {
-                  return _PatientsList(snapshot.data!.patient);
+                  return _PatientsList(snapshot.data!.patients);
                 } else {
                   return Center(
                     child: Text(

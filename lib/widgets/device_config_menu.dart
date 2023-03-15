@@ -1,14 +1,13 @@
-import 'dart:convert';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
-import '../models/config_message_model.dart' as msgModel;
+import '../models/config_message_model.dart' as config_message_model;
 import '../models/device_medicines_model.dart';
 import '../models/medicines_model.dart';
 import '../utilities/app_colors.dart';
+import '../variables.dart' as globals;
 
 class DeviceConfigMenu extends StatefulWidget {
   const DeviceConfigMenu({super.key});
@@ -53,14 +52,13 @@ class _DeviceConfigMenuState extends State<DeviceConfigMenu> {
 
   Future<DeviceMedicines> _getDeviceMedicines(serialNumber) async {
     final url = Uri.parse(
-        'https://www.paramisdemos.com/tesis-dispensador/pilltakeapi/Controller/Api/dispenser.php?type=getMedicines&sn=$serialNumber');
+        '${globals.url}/dispenser.php?type=getMedicines&sn=$serialNumber');
     final response = await http.get(url);
     return deviceMedicinesFromJson(response.body);
   }
 
   Future<Medicines> _getMedicines() async {
-    final url = Uri.parse(
-        'https://paramisdemos.com/tesis-dispensador/pilltakeapi/Controller/Api/medicines.php');
+    final url = Uri.parse('${globals.url}/medicines.php');
     final response = await http.get(url);
     return medicinesFromJson(response.body);
   }
@@ -77,14 +75,12 @@ class _DeviceConfigMenuState extends State<DeviceConfigMenu> {
       'medicine3': medicineValue3,
       'medicine4': medicineValue4
     };
-    print(body.entries);
-    final url = Uri.parse(
-        'https://www.paramisdemos.com/tesis-dispensador/pilltakeapi/Controller/Api/dispenser.php');
+    final url = Uri.parse('${globals.url}/dispenser.php');
     final response = await http.post(url,
         headers: {"Content-Type": "application/x-www-form-urlencoded"},
         body: body);
-    final List<msgModel.Result> configMessage =
-        msgModel.configmessageFromJson(response.body).result;
+    final List<config_message_model.Result> configMessage =
+        config_message_model.configmessageFromJson(response.body).result;
     switch (configMessage[0].message) {
       case 'done':
         return 'Configuración guardada';
@@ -109,17 +105,11 @@ class _DeviceConfigMenuState extends State<DeviceConfigMenu> {
       int index2 = medicines.indexOf(deviceMedicines[0].medicine2.toString());
       int index3 = medicines.indexOf(deviceMedicines[0].medicine3.toString());
       int index4 = medicines.indexOf(deviceMedicines[0].medicine4.toString());
-      for (int i = 0; i < medicineList.length; i++) {
-        print('${medicines.elementAt(i)}');
-      }
-      print(medicines.toString());
       setState(() {
         medicineValue1 = medicines.elementAt(index1);
         medicineValue2 = medicines.elementAt(index2);
         medicineValue3 = medicines.elementAt(index3);
         medicineValue4 = medicines.elementAt(index4);
-        print(
-            '$medicineValue1, $medicineValue2, $medicineValue3, $medicineValue4');
         ignoreInput = !ignoreInput;
         visible = true;
       });
@@ -127,7 +117,6 @@ class _DeviceConfigMenuState extends State<DeviceConfigMenu> {
     } on FormatException {
       return "Revisa el numero de serie";
     } catch (e) {
-      print(e.toString());
       return "Ocurrió un error";
     }
   }
@@ -141,7 +130,7 @@ class _DeviceConfigMenuState extends State<DeviceConfigMenu> {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           decoration: BoxDecoration(
               color: AppColors.cardBackground,
               borderRadius: BorderRadius.all(radius),
@@ -184,7 +173,7 @@ class _DeviceConfigMenuState extends State<DeviceConfigMenu> {
                     decoration: InputDecoration(
                         labelStyle: hintStyle,
                         labelText: 'Número de serie del dispositivo',
-                        border: OutlineInputBorder()),
+                        border: const OutlineInputBorder()),
                     controller: _controller,
                   ),
                 ),
@@ -214,7 +203,7 @@ class _DeviceConfigMenuState extends State<DeviceConfigMenu> {
           child: FadeInLeft(
             duration: const Duration(milliseconds: 500),
             child: Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   color: AppColors.cardBackground,
                   borderRadius: BorderRadius.all(radius),
