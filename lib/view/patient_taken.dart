@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/variables.dart' as globals;
+import 'package:PillTake/variables.dart' as globals;
 import 'package:http/http.dart' as http;
 
 import '../utilities/app_colors.dart';

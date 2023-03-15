@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movil/view/devices.dart';
-import 'package:movil/view/licenses.dart';
+import 'view/devices.dart';
+import 'view/licenses.dart';
 
 import 'view/about.dart';
 import 'view/device_select.dart';
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         '/devices': (context) => const Devices(),
         'devices/select': (context) => const SelectDevice(),
         '/profile': (context) => const Profile(),
-        '/about': (context) => const About(),
+        '/about': (context) => About(),
         '/about/licenses': (context) => const Licenses(),
         '/help': (context) => const Help(),
         'help/help-view': (context) => const HelpView(),

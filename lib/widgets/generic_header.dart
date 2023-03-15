@@ -7,8 +7,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/forms/form_generic.dart';
 
+import '../forms/form_generic.dart';
 import '../utilities/app_colors.dart';
 
 class GenericHeader extends StatelessWidget {

@@ -6,7 +6,7 @@ import '../forms/form_login.dart';
 import '../utilities/app_colors.dart';
 
 class About extends StatelessWidget {
-  const About({Key? key}) : super(key: key);
+  About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +50,7 @@ class About extends StatelessWidget {
                     color: AppColors.white,
                     fontSize: 22,
                     fontWeight: FontWeight.bold)),
-            Text('Pre-Release 0.4.8',
+            Text("1.0.0 + 2",
                 style: GoogleFonts.mukta(
                     color: AppColors.white,
                     fontSize: 20,

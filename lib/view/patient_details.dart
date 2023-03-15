@@ -9,8 +9,8 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'package:movil/variables.dart' as globals;
-import 'package:movil/widgets/recipe_card.dart';
+import 'package:PillTake/variables.dart' as globals;
+import 'package:PillTake/widgets/recipe_card.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../models/intakes_model.dart';

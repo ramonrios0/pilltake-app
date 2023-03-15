@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movil/utilities/app_colors.dart';
-import 'package:movil/widgets/device_config_menu.dart';
-import 'package:movil/widgets/patient_rfid.dart';
-import 'package:movil/widgets/wifi_config_button.dart';
+import 'package:PillTake/utilities/app_colors.dart';
+import 'package:PillTake/widgets/device_config_menu.dart';
+import 'package:PillTake/widgets/patient_rfid.dart';
+import 'package:PillTake/widgets/wifi_config_button.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../widgets/drawer.dart';
-import 'device_config.dart';
-import 'device_select.dart';
 
 class Devices extends StatefulWidget {
   const Devices({super.key});
@@ -49,14 +46,12 @@ class _DevicesState extends State<Devices> {
           backgroundColor: AppColors.mainRed,
           elevation: 0,
         ),
-        body: Container(
-          child: ListView(
-            children: <Widget>[
-              WiFiConfigButton(),
-              PatientRFIDConfig(),
-              DeviceConfigMenu()
-            ],
-          ),
+        body: ListView(
+          children: const <Widget>[
+            WiFiConfigButton(),
+            PatientRFIDConfig(),
+            DeviceConfigMenu()
+          ],
         ));
   }
 }

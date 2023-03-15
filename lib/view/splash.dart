@@ -3,7 +3,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:movil/variables.dart' as globals;
+import 'package:PillTake/variables.dart' as globals;
 import 'package:workmanager/workmanager.dart';
 import 'package:http/http.dart' as http;
 
